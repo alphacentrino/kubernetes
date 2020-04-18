@@ -12,9 +12,10 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build') { 
+        stage("Build") { 
             steps {
-                sh './mvnw clean install package' 
+                sh "mvn clean install package"
+              
             }
         }
         stage("Build image") {
