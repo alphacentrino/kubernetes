@@ -6,12 +6,16 @@ pipeline {
         LOCATION = 'us-central1-a'
         CREDENTIALS_ID = 'pure-vehicle-272119'
     }
+    tools {
+        maven "M3"
+    }
     stages {
         stage("Checkout code") {
             steps {
                 checkout scm
             }
         }
+
         stage('Build') {
          steps {
            
@@ -31,6 +35,7 @@ pipeline {
             }
          }
       }
+
 
 
 
