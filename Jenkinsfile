@@ -12,6 +12,11 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Build') { 
+            steps {
+                sh 'mvn -B -DskipTests clean install package' 
+            }
+        }
         stage("Build image") {
             steps {
                 script {
