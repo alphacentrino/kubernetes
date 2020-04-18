@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean install package' 
+                sh 'mvn clean install package' 
             }
         }
         stage("Build image") {
